@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- SEO + Social meta tags -->
+  <meta name="description" content="Official site of Sanhedrin — UK melodic blackened death metal band. Discover music, shows, and merch.">
+
+  <!-- Open Graph (Facebook, etc.) -->
+  <meta property="og:title" content="Sanhedrin — UK Melodic Blackened Death Metal">
+  <meta property="og:description" content="Official site of Sanhedrin — UK melodic blackened death metal band. Discover music, shows, and merch.">
+  <meta property="og:image" content="https://ik.imagekit.io/sanhedrinuk/images/band%20photo.jpg">
+  <meta property="og:url" content="https://www.sanhedrin.uk">
+  <meta property="og:type" content="website">
+
+  <!-- Twitter Cards -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Sanhedrin — UK Melodic Blackened Death Metal">
+  <meta name="twitter:description" content="Official site of Sanhedrin — UK melodic blackened death metal band.">
+  <meta name="twitter:image" content="https://ik.imagekit.io/sanhedrinuk/images/band%20photo.jpg">
+
+  <!-- Favicon -->
+ <link rel="icon" href="favicon.png" type="image/png">
+
+
+
+
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-08D9BB4VML"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-08D9BB4VML');
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "MusicGroup",
+  "name": "Sanhedrin",
+  "alternateName": "Sanhedrin (UK)",
+  "genre": ["Death Metal", "Melodic Black Metal"],
+  "foundingLocation": "United Kingdom",
+  "foundingDate": "2009",
+  "url": "https://www.yourwebsite.com",
+  "sameAs": [
+
+  "https://www.facebook.com/sanhedrin666",
+  "https://www.instagram.com/sanhedrin_uk",
+  "https://sanhedrin.bandcamp.com",
+  "https://www.youtube.com/@sanhedrinuk",
+  "https://sanhedrin.bigcartel.com",
+  "https://www.tiktok.com/@sanhedrin_uk"
+
+  ]
+}
+</script>
+
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sanhedrin — UK Melodic Blackened Death Metal</title>
+<meta name="description" content="Sanhedrin is a UK melodic blackened death metal band. Check out their releases, merch, shows, and more.">
+<meta name="keywords" content="Sanhedrin, blackened death metal, melodic death metal, UK metal band, metal music, metal merch">
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap" rel="stylesheet">
+
+<style>
+/* ========== BASE STYLES ========== */
+* { margin:0; padding:0; box-sizing:border-box; scroll-behavior:smooth; }
+body { background:#0d0d0d; color:#f5f5f5; line-height:1.5; font-family:'Roboto Slab', serif; }
+a { color:#f5f5f5; text-decoration:none; transition:0.3s; }
+a:hover { color:#ff0000; }
+h1,h2,h3 { font-family:'Roboto Slab', serif; }
+
+/* Sections */
+section { padding:40px 20px; opacity:0; transform:translateY(20px); transition:opacity 1s ease, transform 1s ease; }
+section.visible { opacity:1; transform:translateY(0); }
+.container { max-width:1000px; margin:0 auto; }
+
+/* Nav */
+nav { position:fixed; width:100%; background:rgba(0,0,0,0.85); top:0; left:0; z-index:1000; display:flex; justify-content:center; padding:10px 0; }
+nav a { margin:0 12px; font-weight:bold; }
+
+/* Hero */
+#hero {
+  height:70vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:flex-start;
+  align-items:center;
+  background:url('https://ik.imagekit.io/sanhedrinuk/images/band%20photo.jpg') no-repeat center center/cover;
+  text-align:center;
+  position:relative;
+  overflow:hidden;
+}
+#hero::after {
+  content:'';
+  position:absolute; top:0; left:0; width:100%; height:100%;
+  background:url('https://i.pinimg.com/736x/3f/9c/04/3f9c0413778d8d4bac42b90eb9f62a9c.jpg') repeat;
+  opacity:0;
+  pointer-events: none;
+}
+#hero img { max-width:400px; width:100%; margin-bottom:20px; margin-top:20vh; filter:invert(1) drop-shadow(2px 2px 6px #000); }
+#hero p { font-size:1.4rem; margin-bottom:20px; }
+.hero-buttons a { background:#b71c1c; padding:12px 25px; margin:0 10px; border-radius:5px; transition:0.3s; font-size:1rem; }
+.hero-buttons a:hover { background:#ff0000; }
+
+/* Smaller buttons on mobile */
+@media (max-width:600px){
+  .hero-buttons a {
+    padding:8px 16px;
+    font-size:0.8rem;
+    margin:0 5px;
+  }
+}
+
+/* Grids */
+section h2 { font-size:2rem; margin-bottom:20px; text-align:center; }
+.member-grid { display:flex; flex-wrap:wrap; justify-content:center; gap:20px; }
+.member { text-align:center; width:150px; cursor:pointer; }
+.member img { width:150px; height:150px; object-fit:cover; border-radius:5px; transition:transform 0.3s; }
+.member img:hover { transform:scale(1.05); }
+.grid { display:flex; flex-wrap:wrap; justify-content:center; gap:20px; }
+.grid-item { width:200px; text-align:center; transition:transform 0.3s; }
+.grid-item:hover { transform:scale(1.05); }
+.grid-item img { width:200px; height:200px; object-fit:cover; border-radius:5px; margin-bottom:10px; }
+
+/* Shows */
+.show-list { display:flex; flex-direction:column; gap:10px; }
+.show-link { cursor:pointer; }
+.show { display:flex; justify-content:space-between; padding:8px 0; border-bottom:1px solid #333; flex-wrap:wrap; font-size:0.95rem; }
+.show span { flex:1; text-align:center; }
+.show-date { flex:2; text-align:left; }
+.show-city { flex:1; }
+.show-venue { flex:1; }
+.show-lineup { flex:3; text-align:left; }
+.show-thumb { width:150px; border-radius:5px; margin-right:10px; transition:transform 0.3s; }
+.show-link:hover .show-thumb { transform:scale(1.05); }
+
+/* Live Pics (Masonry) */
+#live-pics { text-align:center; margin:60px 0; }
+#live-pics h2 { font-size:1.8rem; color:#f5f5f5; margin-bottom:25px; text-transform:uppercase; letter-spacing:1px; }
+.masonry { column-count:3; column-gap:10px; }
+.masonry img { width:100%; margin-bottom:10px; border-radius:6px; display:block; transition:transform 0.3s ease, opacity 0.3s; }
+.masonry img:hover { transform:scale(1.02); opacity:0.9; }
+@media (max-width:900px){ .masonry{column-count:2;} }
+@media (max-width:600px){ .masonry{column-count:1;} }
+.more-photos { display:inline-block; margin-top:20px; color:#ccc; text-decoration:none; }
+.more-photos:hover { color:#fff; text-decoration:underline; }
+
+/* ===== Previous Shows Collage - Flex Layout for A4 Images ===== */
+.archive-collage-link {
+  display: flex;
+  justify-content: center; /* center the collage horizontally */
+  text-decoration: none;
+  position: relative;
+  margin: 30px 0;
+}
+
+.archive-collage {
+  display: flex;
+  gap: 0px; /* space between images */
+  justify-content: center;
+  align-items: flex-end; /* align bottoms for nicer stacking */
+  position: relative;
+  max-width: 90%; /* responsive max width */
+}
+
+.archive-collage img {
+  width: 180px; /* adjust as needed */
+  height: auto; /* preserve aspect ratio */
+  border: 2px solid #fff;
+  border-radius: 6px;
+  transition: transform 0.5s ease, z-index 0.3s ease;
+  cursor: pointer;
+}
+
+/* Slight rotations for "stacked" effect */
+.archive-collage img:nth-child(1) { transform: rotate(-8deg); }
+.archive-collage img:nth-child(2) { transform: rotate(5deg); }
+.archive-collage img:nth-child(3) { transform: rotate(-3deg); }
+
+/* Hover effect: bring to front and straighten */
+.archive-collage img:hover {
+  transform: rotate(0deg) scale(1.1);
+  z-index: 10;
+}
+
+/* Text overlay */
+.archive-text {
+  position: absolute;
+  bottom: -10px; /* just below the images */
+  left: 50%;
+  transform: translateX(-50%);
+  color: #fff;
+  background: rgba(0,0,0,0.6);
+  padding: 8px 12px;
+  border-radius: 4px;
+  font-weight: bold;
+  font-size: 1rem;
+  text-align: center;
+}
+
+/* Responsive tweaks */
+@media (max-width: 768px) {
+  .archive-collage {
+    gap: 15px;
+  }
+  .archive-collage img {
+    width: 130px;
+  }
+}
+
+@media (max-width: 480px) {
+  .archive-collage {
+    flex-direction: column;
+    align-items: center;
+  }
+  .archive-collage img {
+    width: 120px;
+    margin-bottom: 15px;
+    transform: none; /* remove rotation for stacked column */
+  }
+  .archive-text {
+    bottom: 0;
+  }
+}
+
+/* Footer */
+footer { text-align:center; padding:15px; background:#111; font-size:0.9rem; }
+
+/* Modal */
+.modal { display:none; position:fixed; z-index:2000; left:0; top:0; width:100%; height:100%; background-color:rgba(0,0,0,0.9); justify-content:center; align-items:center; }
+.modal img { max-width:90%; max-height:90%; border-radius:5px; }
+
+/* Responsive tweaks */
+@media (max-width:768px){
+  nav { flex-wrap:wrap; padding:5px 10px; }
+  nav a { font-size:0.75rem; margin:4px; }
+  #hero { height:auto; padding-top:100px; padding-bottom:30px; background-position:center top; }
+  #hero img { max-width:75%; margin-top:0; }
+  .grid { flex-direction:column; align-items:center; }
+  .show { flex-direction:column; align-items:center; }
+}
+/* Reduce space between previous shows and live shots */
+#previous-shows {
+  margin-bottom: 0;
+}
+
+#live-pics {
+  margin-top: 20px;
+}
+/* Make the 'Previous Shows Archive' title a clean link */
+.archive-title-link {
+  color: inherit;              /* same colour as the heading */
+  text-decoration: none;       /* remove underline */
+}
+
+.archive-title-link:hover {
+  color: #ff0000;              /* optional: match your hover style */
+  text-decoration: none;
+}
+
+.back-to-top {
+  display:block;
+  text-align:center;
+  margin:30px auto;
+  color:#777;
+  font-size:0.9rem;
+}
+.back-to-top:hover { color:#ff0000; }
+#releases br {
+  line-height: 0.2;
+  display: block;
+  margin: 2px 0; /* controls the vertical gap */
+  content: "";
+}
+
+</style>
+</head>
+
+<body>
+
+<nav>
+  <a href="#releases">Releases</a>
+  <a href="#merch">Merch</a>
+  <a href="#shows">Shows</a>
+  <a href="https://open.spotify.com/artist/4o5Fkyj0aIE4mbGI1DNp68" target="_blank">Spotify</a>
+</nav>
+
+<section id="hero" class="visible">
+  <img src="https://ik.imagekit.io/sanhedrinuk/images/logo.png" alt="Sanhedrin Logo">
+  <p>Melodic Blackened Death Metal from UK</p>
+  <div class="hero-buttons">
+    <a href="#merch">Merch</a>
+    <a href="#releases">Releases</a>
+    <a href="#shows">Shows</a>
+  </div>
+</section>
+
+<section id="bio" class="container">
+  <h2>BIO</h2>
+  <p>Sanhedrin emerged in 2009, fusing death metal and melodic black metal into their own unique sound. In 2010, they unleashed their debut album, 'Salvation Through Sin', followed by the defining EP 'And On Into The Eternal Nether...' in 2011.<br><br>After a prolonged silence, Sanhedrin has risen once again in 2021 with a new line-up, currently weaving their first new material since their resurrection.</p>
+</section>
+
+<section id="members" class="container">
+  <h2>MEMBERS</h2>
+ <div class="member-grid">
+    <div class="member"><img src="https://ik.imagekit.io/sanhedrinuk/images/daniel%20simpson.jpg" alt="Daniel Simpson" class="member-img"><h3>Daniel Simpson</h3><p>Guitar</p></div>
+    <div class="member"><img src="https://ik.imagekit.io/sanhedrinuk/images/ash%20miller.jpg" alt="Ash Miller" class="member-img"><h3>Ash Miller</h3><p>Drums</p></div>
+    <div class="member"><img src="https://ik.imagekit.io/sanhedrinuk/images/par%20mahn.jpg" alt="Par Mahn" class="member-img"><h3>Par Mahn</h3><p>Vocals / Guitar</p></div>
+    <div class="member"><img src="https://ik.imagekit.io/sanhedrinuk/images/graham%20bort.jpg" alt="Graham Bort" class="member-img"><h3>Graham Bort</h3><p>Bass</p></div>
+  </div>
+</section>
+
+<section id="releases" class="container">
+  <h2>RELEASES</h2>
+  <div class="grid">
+    <div class="grid-item">
+      <a href="https://sanhedrin.bandcamp.com/album/salvation-through-sin" target="_blank">
+        <img src="https://f4.bcbits.com/img/a4257096756_16.jpg" alt="Salvation Through Sin"><p>Salvation Through Sin (2010)</p>
+      </a><br>
+      <p><a href="https://open.spotify.com/album/1PuCASr2mBVLS2ag8LSp3y" target="_blank">[Spotify link]</a> 
+       <p><a href="      https://www.youtube.com/watch?v=NAs5hl6N7QQ
+" target="_blank">[YouTube link]</a></p>
+
+    </div>
+    <div class="grid-item">
+      <a href="https://sanhedrin.bandcamp.com/album/and-on-into-the-eternal-nether-of-forgotten-and-stricken-souls" target="_blank">
+        <img src="https://f4.bcbits.com/img/a1582850201_16.jpg" alt="And On Into The Eternal Nether…"><p>And On Into The Eternal Nether...Of Forgotten And Stricken Souls (2011)</p>
+      </a><br>
+      <p><a href="https://open.spotify.com/album/6gFRb1RYyrbGht1Es6V5W3" target="_blank">[Spotify link]</a></p>
+      <p><a href="      https://www.youtube.com/watch?v=XK8OBZWMAsk
+" target="_blank">[YouTube link]</a></p>
+
+
+    </div>
+  </div>
+</section>
+
+<section id="merch" class="container">
+  <h2>MERCH</h2>
+  <div class="grid">
+    <div class="grid-item"><a href="https://sanhedrin.bigcartel.com/product/king-shirt" target="_blank"><img src="https://f4.bcbits.com/img/0040861302_10.jpg" alt="King Shirt"><p>King Shirt<br>(Black, Grey, Navy)</p></a></div>
+    <div class="grid-item"><a href="https://sanhedrin.bigcartel.com/product/white-shirt-2021" target="_blank"><img src="https://f4.bcbits.com/img/0026752760_10.jpg" alt="White Reaper Shirt"><p>White Reaper Shirt<br>(Small & 2XL only)</p></a></div>
+    <div class="grid-item"><a href="https://sanhedrin.bigcartel.com/product/beanie-hat" target="_blank"><img src="https://f4.bcbits.com/img/0039057873_10.jpg" alt="Logo Beanie"><p>Logo Beanie</p></a></div>
+  </div>
+</section>
+
+<section id="shows" class="container">
+  <h2>SHOWS</h2>
+  
+  <div class="show-list">
+    <a href="https://www.facebook.com/events/1200397978801385" target="_blank" class="show-link">
+      <div class="show">
+        <img src="https://ik.imagekit.io/sanhedrinuk/posters/46.jpeg" alt="Sheffield Show Poster" class="show-thumb">
+        <span class="show-date">Saturday, December 13th</span>
+        <span class="show-city">Sheffield</span>
+        <span class="show-venue">Corporation</span>
+        <span class="show-lineup">Pestilence, Damim, Pantheon</span>
+      </div>
+    </a>
+    <a href="https://fb.me/e/35sQleuC9" target="_blank" class="show-link">
+      <div class="show">
+        <img src="https://ik.imagekit.io/sanhedrinuk/images/brightongig.jpg" alt="Brighton Show Poster" class="show-thumb">
+        <span class="show-date">Saturday, March 21st</span>
+        <span class="show-city">Brighton</span>
+        <span class="show-venue">Daltons</span>
+        <span class="show-lineup">Day of Death II: Scordatura, Lavinia Whateley, Cogas, and more</span>
+      </div>
+    </a>
+  </div>
+</section>
+ <section id="previous-shows" class="container">
+  <h2><a href="gigs.html" class="archive-title-link">PREVIOUS SHOWS ARCHIVE</a></h2>
+
+  <a href="gigs.html" class="archive-collage-link">
+  <div class="archive-collage">
+      <img src="https://ik.imagekit.io/sanhedrinuk/posters/44.jpg" alt="Previous show 1" class="collage-img">
+      <img src="https://ik.imagekit.io/sanhedrinuk/posters/41.jpg" alt="Previous show 2" class="collage-img">
+      <img src="https://ik.imagekit.io/sanhedrinuk/posters/40.jpg" alt="Previous show 3" class="collage-img">
+    </div>
+  </a>
+
+
+</section>
+
+<!-- ===== LIVE PICTURES ===== -->
+<section id="live-pics">
+  <h2>LIVE SHOTS</h2>
+<div class="masonry">
+<img src="https://ik.imagekit.io/sanhedrinuk/live/iammorbidfront.jpg" alt="Sanhedrin supporting I Am Morbid — Live at 229, London">
+<img src="https://ik.imagekit.io/sanhedrinuk/live/bristol.jpg" alt="Sanhedrin + Stahlsgarg + Napierdalac — Live at The Gryphon, Bristol">
+<img src="https://ik.imagekit.io/sanhedrinuk/live/blackheartband.jpg" alt="Sanhedrin at the Black Heart, Camden, London">
+<img src="https://ik.imagekit.io/sanhedrinuk/live/cartandhorses.JPG" alt="Sanhedrin + Forsaken Legion + Tableau Mort — Live at Cart & Horses, London">
+<img src="https://ik.imagekit.io/sanhedrinuk/live/incarcerated.jpg" alt="Sanhedrin + Incarcerated + Vulgaris — Live at Cart & Horses, London">
+<img src="https://ik.imagekit.io/sanhedrinuk/live/manchester2.jpg" alt="Sanhedrin + Cryptic Shift + Inhuman Nature + Suicide Samurai — Live at Star and Garter, Manchester">
+<img src="https://ik.imagekit.io/sanhedrinuk/live/iammorbidback.jpg" alt="Sanhedrin supporting I Am Morbid — Live at 229, London">
+<img src="https://ik.imagekit.io/sanhedrinuk/live/abduction.jpg" alt="Sanhedrin + Necronautical + Abduction — Live at The Black Heart, London">
+<img src="https://ik.imagekit.io/sanhedrinuk/live/infernalsea.jpg" alt="Sanhedrin + Necronautical + Abduction — Live at The Black Heart, London">
+<img src="https://ik.imagekit.io/sanhedrinuk/live/sanhedrin3.jpg" alt="Sanhedrin + Ataud + Sawticide + Ancient Rivalry — Live at Cart & Horses, London">
+<img src="https://ik.imagekit.io/sanhedrinuk/live/grahamcarts.jpg" alt="Sanhedrin + Forsaken Legion + Tableau Mort — Live at Cart & Horses, London">
+<img src="https://ik.imagekit.io/sanhedrinuk/live/manchester.jpg" alt="Sanhedrin + Cryptic Shift + Inhuman Nature + Suicide Samurai — Live at Star and Garter, Manchester">
+<img src="https://ik.imagekit.io/sanhedrinuk/live/brewdogband.jpg" alt="Sanhedrin at Brewdog, Camden London">
+<img src="https://ik.imagekit.io/sanhedrinuk/live/ashbristol.jpg" alt="Sanhedrin + Stahlsgarg + Napierdalac — Live at The Gryphon, Bristol">
+</div>
+
+
+ 
+</section>
+
+<a href="#hero" class="back-to-top">↑ Back to Top</a>
+
+
+
+<footer>
+
+  <p>
+    <a href="https://sanhedrin.bandcamp.com" target="_blank">Bandcamp</a> |
+    <a href="https://instagram.com/sanhedrin_uk" target="_blank">Instagram</a> |
+    <a href="https://www.tiktok.com/@sanhedrin_uk" target="_blank">TikTok</a> |
+    <a href="https://www.youtube.com/@sanhedrinuk" target="_blank">YouTube</a> |
+    <a href="https://facebook.com/sanhedrin666" target="_blank">Facebook</a> |
+    <a href="https://www.metal-archives.com/bands/Sanhedrin/3540290141" target="_blank">Metal Archives</a>
+  </p><p><p style="text-align:center; font-size:0.9rem; color:#999; margin-bottom:5px;">
+  Contact us via email: sanhedrinuk [at] yahoo [dot] com
+</p><p></p>
+  <p>&copy; 2025 Sanhedrin</p>
+</footer>
+
+
+<div id="modal" class="modal"><img id="modal-img" src="" alt="Band member"></div>
+
+<script>
+const sections=document.querySelectorAll('section');
+const observer=new IntersectionObserver(entries=>{entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('visible');}})},{threshold:0.1});
+sections.forEach(s=>observer.observe(s));
+const modal=document.getElementById('modal'),modalImg=document.getElementById('modal-img');
+document.querySelectorAll('.member-img').forEach(img=>{img.addEventListener('click',()=>{modal.style.display='flex';modalImg.src=img.src;modalImg.alt=img.alt;});});
+modal.addEventListener('click',()=>modal.style.display='none');
+document.querySelectorAll('nav a[href^="#"]').forEach(a=>{a.addEventListener('click',e=>{e.preventDefault();document.querySelector(a.getAttribute('href')).scrollIntoView({behavior:'smooth'});});});
+// ===== Randomize Live Pictures =====
+const masonry = document.querySelector('#live-pics .masonry');
+if (masonry) {
+  const images = Array.from(masonry.querySelectorAll('img'));
+  
+  for (let i = images.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [images[i], images[j]] = [images[j], images[i]];
+  }
+
+  images.forEach(img => masonry.appendChild(img));
+}
+</script>
+</body>
+</html>
