@@ -1,0 +1,6 @@
+# robots.txt for Sanhedrin website
+
+User-agent: *
+Allow: /
+
+Sitemap: https://www.sanhedrin.uk/sitemap.xml
