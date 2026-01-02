@@ -25,7 +25,9 @@
       --shadow: 0 18px 60px rgba(0,0,0,.55);
       --ring: 0 0 0 3px rgba(255,255,255,.14);
     }
+
     *{box-sizing:border-box}
+
     body{
       margin:0;
       font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
@@ -37,6 +39,7 @@
       -webkit-font-smoothing:antialiased;
       line-height:1.45;
     }
+
     a{color:inherit}
     .wrap{max-width:var(--max); margin:0 auto; padding:0 18px;}
 
@@ -46,13 +49,16 @@
       background: rgba(10,10,10,.62);
       border-bottom:1px solid rgba(255,255,255,.08);
     }
+
     .nav{
       display:flex; align-items:center; justify-content:space-between;
       padding:12px 0; gap:14px;
     }
+
     .brand{display:flex; flex-direction:column; line-height:1.1}
     .brand strong{font-size:1.02rem; letter-spacing:.2px}
     .brand span{font-size:.88rem; color:var(--muted)}
+
     .navlinks{display:flex; gap:10px; align-items:center; flex-wrap:wrap; justify-content:flex-end}
     .navlinks a{
       text-decoration:none; color:var(--muted); font-weight:650;
@@ -70,6 +76,7 @@
       font-weight:700;
       transition:transform .12s ease, background .12s ease, border-color .12s ease;
       backdrop-filter: blur(10px);
+      color: inherit;
     }
     .btn:hover{transform:translateY(-1px); background:rgba(255,255,255,.11); border-color:rgba(255,255,255,.18);}
     .btn.primary{background:rgba(255,255,255,.14); border-color:rgba(255,255,255,.22);}
@@ -218,10 +225,8 @@
       text-align:center;
     }
 
-    /* PHOTOS: 2 landscapes (uncropped) + 2 portraits (bigger) */
-    .gallery{
-      max-width: 980px;
-    }
+    /* PHOTOS */
+    .gallery{max-width: 980px;}
     .gRow{
       display:grid;
       grid-template-columns: 1fr 1fr;
@@ -233,21 +238,18 @@
       overflow:hidden;
       border-radius: 14px;
       border:1px solid rgba(255,255,255,.12);
-      background: rgba(0,0,0,.22);
+      background: rgba(0,0,0,.22); 
       box-shadow: 0 10px 30px rgba(0,0,0,.28);
     }
-
-    /* Show “as-is”: no crop */
-    .gLand{ height: 210px; }          /* bigger than before */
-    .gPort{ height: 340px; }          /* bigger (forsaken/narcotic) */
-
+    .gLand{ height: 210px; }
+    .gPort{ height: 340px; }
     .gTile img{
       width:100%;
       height:100%;
-      object-fit: contain;            /* no cropping */
-      background: #060606;            /* letterbox */
+      object-fit: contain;
+      background: #060606; 
       display:block;
-      padding:8px;                    /* breathing room */
+      padding:8px;
     }
 
     /* Contact */
@@ -270,7 +272,6 @@
       .grid2{grid-template-columns:1fr;}
       .chips{grid-template-columns: 1fr 1fr;}
       .contactGrid{grid-template-columns:1fr;}
-
       .gRow{grid-template-columns:1fr;}
       .gLand{height: 230px;}
       .gPort{height: 380px;}
@@ -282,6 +283,151 @@
       .gPort{height: 340px;}
       .gTile img{padding:6px;}
     }
+
+    /* =========================================================
+       LIGHT MODE (LIGHT BLUE) — placed at END so it overrides
+       ========================================================= */
+    @media (prefers-color-scheme: light){
+      :root{
+        --bg:#eaf3ff;
+        --text:rgba(10,16,28,.92);
+        --muted:rgba(10,16,28,.70);
+        --border:rgba(18,44,84,.16);
+        --panel:rgba(255,255,255,.82);
+        --shadow: 0 18px 60px rgba(18,44,84,.12);
+        --ring: 0 0 0 3px rgba(18,44,84,.14);
+      }
+
+      body{
+        background:
+          radial-gradient(900px 700px at 20% 0%, rgba(52,140,255,.20), transparent 58%),
+          radial-gradient(900px 700px at 85% 10%, rgba(120,200,255,.20), transparent 55%),
+          radial-gradient(800px 600px at 50% 110%, rgba(80,170,255,.14), transparent 60%),
+          var(--bg);
+        color: var(--text);
+      }
+
+      /* Header: grey-blue banner + ALL text white */
+      header{
+        background: rgba(70, 88, 115, .78);
+        border-bottom:1px solid rgba(255,255,255,.18);
+      }
+      header .brand strong,
+      header .brand span,
+      header .navlinks a{
+        color: rgba(255,255,255,.95);
+      }
+      header .navlinks a:hover{
+        background: rgba(255,255,255,.14);
+        color: rgba(255,255,255,.98);
+      }
+      header .btn{
+        color: rgba(255,255,255,.96);
+        border-color: rgba(255,255,255,.28);
+        background: rgba(255,255,255,.12);
+      }
+      header .btn:hover{
+        background: rgba(255,255,255,.18);
+        border-color: rgba(255,255,255,.36);
+      }
+
+      /* General surfaces */
+      .card{
+        border:1px solid rgba(18,44,84,.12);
+        background: var(--panel);
+        box-shadow: 0 10px 40px rgba(18,44,84,.10);
+      }
+
+      /* Buttons in content: dark text so nothing disappears */
+      .btn{
+        border:1px solid rgba(18,44,84,.16);
+        background: rgba(255,255,255,.70);
+        color: rgba(10,16,28,.92);
+      }
+      .btn:hover{
+        background: rgba(255,255,255,.92);
+        border-color: rgba(18,44,84,.22);
+      }
+      .btn.primary{
+        background: rgba(255,255,255,.78);
+        border-color: rgba(18,44,84,.20);
+        color: rgba(10,16,28,.92);
+      }
+
+      /* Explicitly requested: make these black/dark */
+      .mini{ color: rgba(10,16,28,.92); }
+      footer{
+        border-top:1px solid rgba(18,44,84,.12);
+        color: rgba(10,16,28,.92);
+      }
+
+      .pill{
+        border:1px solid rgba(18,44,84,.14);
+        background: rgba(255,255,255,.72);
+        color: rgba(10,16,28,.78);
+      }
+
+      .videoCard{
+        border:1px solid rgba(18,44,84,.12);
+        background: rgba(255,255,255,.84);
+        box-shadow: 0 10px 40px rgba(18,44,84,.10);
+      }
+      .videoOverlay{
+        background: linear-gradient(180deg, rgba(255,255,255,.02), rgba(10,16,28,.16));
+      }
+      .playBtn{
+        border:1px solid rgba(18,44,84,.20);
+        background: rgba(255,255,255,.80);
+        box-shadow: 0 10px 30px rgba(18,44,84,.12);
+        color: rgba(10,16,28,.92);
+      }
+      .videoSub, .hint{
+        color: rgba(10,16,28,.70);
+      }
+
+      .gTile{
+        border:1px solid rgba(18,44,84,.12);
+        background: rgba(255,255,255,.84);
+        box-shadow: 0 10px 30px rgba(18,44,84,.10);
+      }
+      .gTile img{
+        background: rgba(255,255,255,.94);
+      }
+
+      .bioLine{
+        border-top:1px solid rgba(18,44,84,.12);
+        color: rgba(10,16,28,.70);
+      }
+      .chip{
+        border:1px solid rgba(18,44,84,.12);
+        background: rgba(255,255,255,.66);
+        color: rgba(10,16,28,.72);
+      }
+      .heroImage{
+        background: rgba(255,255,255,.75);
+        border:1px solid rgba(18,44,84,.12);
+        box-shadow: var(--shadow);
+      }
+    }
+    @media (prefers-color-scheme: light){
+  .gTile{
+    background: transparent;
+    border: 1px solid rgba(18,44,84,.16);
+    box-shadow: 0 10px 30px rgba(18,44,84,.10);
+  }
+
+  .gTile img{
+    background: transparent; /* removes white letterbox */
+  }
+}
+@media (prefers-color-scheme: light){
+  .gTile{
+    background: rgba(255,255,255,.18);
+    backdrop-filter: blur(6px);
+    border: 1px solid rgba(18,44,84,.16);
+  }
+}
+
   </style>
 </head>
 
@@ -390,12 +536,17 @@
           <div class="card">
             <div class="pad bioText">
               <p>
-                Originally from Hungary, Ash moved to London to push his music career further after multiple stints touring Europe with the circus.</p>
-                <p>That background helped Ash build consistency under pressure, walking into unfamiliar setups, adapting fast, staying solid night after night.
+                Originally from Hungary, Ash moved to London to push his music career further after multiple stints touring Europe with the circus.
+              </p>
+              <p>
+                That background helped Ash build consistency under pressure — walking into unfamiliar setups, adapting fast, staying solid night after night.
+              </p>
+              <p>
+                Ash is also an avid dubstep producer, deeply embedded in London’s electronic music scene.              
               </p>
               <p>
                 Since relocating, he’s worked with metal and rock acts across the London scene and beyond. He’s known for being dependable,
-                easy to work with, and a friendly presence in the community, the sort of person you can trust on a show day.
+                easy to work with, and a friendly presence in the community — the sort of person you can trust on a show day.
               </p>
               <p class="bioLine">
                 Offstage: gym sessions, craft beers, and Guinness (especially Guinness).
@@ -452,9 +603,9 @@
             <div class="pad">
               <h3 style="margin:0 0 10px;">Worked with</h3>
               <ul class="list" style="margin:0;">
-                <li>Sanhedrin</li>
+                <li>Sanhedrin (Black / Death Metal)</li>
                 <li>Beyond Priest (Judas Priest tribute)</li>
-                <li>Magazin (Hungary)</li>
+                <li>Magazin (Hungary rock legends)</li>
                 <li>Various London metal band clients</li>
               </ul>
 
@@ -477,7 +628,6 @@
         <div class="sectionHead">
           <div>
             <h2>Photos</h2>
-            
           </div>
         </div>
 
@@ -487,21 +637,19 @@
               <img src="https://ik.imagekit.io/sanhedrinuk/ashmillersite/bristol2.jpg" alt="Live photo (Bristol)">
             </div>
             <div class="gTile gLand">
-              <img src="https://ik.imagekit.io/sanhedrinuk/ashmillersite/cart.jpg" alt="Live photo (Cart / Forsaken)">
+              <img src="https://ik.imagekit.io/sanhedrinuk/ashmillersite/cart.jpg" alt="Live photo (Cart & Horses London)">
             </div>
           </div>
 
           <div class="gRow">
             <div class="gTile gPort">
-              <img src="https://ik.imagekit.io/sanhedrinuk/ashmillersite/forsaken.jpg" alt="Live photo (Forsaken / Cart)">
+              <img src="https://ik.imagekit.io/sanhedrinuk/ashmillersite/forsaken.jpg" alt="Live photo (London)">
             </div>
             <div class="gTile gPort">
-              <img src="https://ik.imagekit.io/sanhedrinuk/ashmillersite/narcoticgig.JPG" alt="Live photo (Narcotic gig)">
+              <img src="https://ik.imagekit.io/sanhedrinuk/ashmillersite/narcoticgig.JPG" alt="Live photo (Milton Keynes)">
             </div>
           </div>
         </div>
-
-       
       </div>
     </section>
 
@@ -565,6 +713,16 @@
       el.scrollIntoView({ behavior: "smooth", block: "start" });
       history.replaceState(null, "", id);
     });
+
+    // Update theme-color meta based on system theme (light-blue in light mode)
+    (function(){
+      const meta = document.querySelector('meta[name="theme-color"]');
+      if (!meta) return;
+      const set = (isLight) => meta.setAttribute("content", isLight ? "#eaf3ff" : "#0a0a0a");
+      const mq = window.matchMedia("(prefers-color-scheme: light)");
+      set(mq.matches);
+      mq.addEventListener?.("change", (e) => set(e.matches));
+    })();
   </script>
 </body>
 </html>
