@@ -156,6 +156,51 @@ section h2 { font-size:2rem; margin-bottom:20px; text-align:center; }
 .grid-item:hover { transform:scale(1.05); }
 .grid-item img { width:200px; height:200px; object-fit:cover; border-radius:5px; margin-bottom:10px; }
 
+/* ===== RELEASE PLATFORM ICONS ===== */
+.release-links {
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  margin-top: 10px;
+}
+
+.release-links a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border: 1px solid #222;
+  border-radius: 6px;
+  background: rgba(0,0,0,0.25);
+  transition: transform 0.2s, border-color 0.2s, background 0.2s;
+}
+
+.release-links svg {
+  width: 18px;
+  height: 18px;
+  fill: #f5f5f5;
+  opacity: 0.85;
+  transition: opacity 0.2s, fill 0.2s;
+}
+
+.release-links a:hover {
+  transform: translateY(-1px);
+  border-color: #444;
+  background: rgba(0,0,0,0.45);
+}
+
+.release-links a:hover svg {
+  opacity: 1;
+  fill: #ff0000; /* matches your site hover vibe */
+}
+
+@media (max-width:600px){
+  .release-links a { width: 32px; height: 32px; }
+  .release-links svg { width: 17px; height: 17px; }
+}
+
+
 /* ===== YOUTUBE SHORT EMBED (ROBUST) ===== */
 #short {
   padding-top: 40px;
@@ -449,16 +494,58 @@ footer { text-align:center; padding:15px; background:#111; font-size:0.9rem; }
       <a href="https://sanhedrin.bandcamp.com/album/salvation-through-sin" target="_blank">
         <img src="https://f4.bcbits.com/img/a4257096756_16.jpg" alt="Salvation Through Sin"><p>Salvation Through Sin (2010)</p>
       </a><br>
-      <p><a href="https://open.spotify.com/album/1PuCASr2mBVLS2ag8LSp3y" target="_blank" data-ga-label="STS_SPT">[Spotify link]</a> 
-       <p><a href="      https://www.youtube.com/watch?v=NAs5hl6N7QQ" target="_blank" data-ga-label="STS_YT">[YouTube link]</a></p>
+   <div class="release-links">
+  <a href="https://open.spotify.com/album/1PuCASr2mBVLS2ag8LSp3y"
+     target="_blank"
+     aria-label="Listen on Spotify"
+     title="Spotify"
+     data-ga-label="STS_SPT">
+    <!-- Spotify icon -->
+    <svg viewBox="0 0 24 24" role="img" aria-hidden="true">
+      <path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.6 0 12 0zm5.5 17.3c-.2.3-.6.4-.9.2-2.5-1.5-5.6-1.9-9.4-1.1-.4.1-.7-.2-.8-.5-.1-.4.2-.7.5-.8 4.1-.9 7.6-.5 10.4 1.2.3.2.4.6.2 1zm1.3-3c-.2.4-.7.5-1 .3-2.9-1.8-7.3-2.3-10.8-1.3-.4.1-.8-.1-.9-.5-.1-.4.1-.8.5-.9 4-1.2 8.9-.6 12.2 1.5.4.2.5.7.3 1zm.1-3.2c-3.5-2.1-9.3-2.3-12.6-1.3-.5.1-1-.1-1.1-.6-.1-.5.1-1 .6-1.1 3.8-1.2 10.1-1 14.1 1.5.4.3.6.8.3 1.2-.2.4-.8.6-1.2.3z"/>
+    </svg>
+  </a>
+
+  <a href="https://www.youtube.com/watch?v=NAs5hl6N7QQ"
+     target="_blank"
+     aria-label="Watch on YouTube"
+     title="YouTube"
+     data-ga-label="STS_YT">
+    <!-- YouTube icon -->
+    <svg viewBox="0 0 24 24" role="img" aria-hidden="true">
+      <path d="M23.5 6.2s-.2-1.6-.8-2.3c-.8-.9-1.7-.9-2.1-1C17.5 2.5 12 2.5 12 2.5h0s-5.5 0-8.6.4c-.4.1-1.3.1-2.1 1-.6.7-.8 2.3-.8 2.3S0 8 0 9.8v1.7c0 1.8.2 3.6.2 3.6s.2 1.6.8 2.3c.8.9 1.9.9 2.4 1 1.7.2 7.2.4 8.6.4s5.5 0 8.6-.4c.4-.1 1.3-.1 2.1-1 .6-.7.8-2.3.8-2.3s.2-1.8.2-3.6V9.8c0-1.8-.2-3.6-.2-3.6zM9.5 14.6V7.9l6.3 3.4-6.3 3.3z"/>
+    </svg>
+  </a>
+</div>
+
 
     </div>
     <div class="grid-item">
       <a href="https://sanhedrin.bandcamp.com/album/and-on-into-the-eternal-nether-of-forgotten-and-stricken-souls" target="_blank">
         <img src="https://f4.bcbits.com/img/a1582850201_16.jpg" alt="And On Into The Eternal Nether…"><p>And On Into The Eternal Nether...Of Forgotten And Stricken Souls (2011)</p>
       </a><br>
-      <p><a href="https://open.spotify.com/album/6gFRb1RYyrbGht1Es6V5W3" target="_blank" data-ga-label="EP_SPT">[Spotify link]</a></p>
-      <p><a href="      https://www.youtube.com/watch?v=XK8OBZWMAsk" target="_blank" data-ga-label="EP_YT">[YouTube link]</a></p>
+      <div class="release-links">
+  <a href="https://open.spotify.com/album/6gFRb1RYyrbGht1Es6V5W3"
+     target="_blank"
+     aria-label="Listen on Spotify"
+     title="Spotify"
+     data-ga-label="EP_SPT">
+    <svg viewBox="0 0 24 24" role="img" aria-hidden="true">
+      <path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.6 0 12 0zm5.5 17.3c-.2.3-.6.4-.9.2-2.5-1.5-5.6-1.9-9.4-1.1-.4.1-.7-.2-.8-.5-.1-.4.2-.7.5-.8 4.1-.9 7.6-.5 10.4 1.2.3.2.4.6.2 1zm1.3-3c-.2.4-.7.5-1 .3-2.9-1.8-7.3-2.3-10.8-1.3-.4.1-.8-.1-.9-.5-.1-.4.1-.8.5-.9 4-1.2 8.9-.6 12.2 1.5.4.2.5.7.3 1zm.1-3.2c-3.5-2.1-9.3-2.3-12.6-1.3-.5.1-1-.1-1.1-.6-.1-.5.1-1 .6-1.1 3.8-1.2 10.1-1 14.1 1.5.4.3.6.8.3 1.2-.2.4-.8.6-1.2.3z"/>
+    </svg>
+  </a>
+
+  <a href="https://www.youtube.com/watch?v=XK8OBZWMAsk"
+     target="_blank"
+     aria-label="Watch on YouTube"
+     title="YouTube"
+     data-ga-label="EP_YT">
+    <svg viewBox="0 0 24 24" role="img" aria-hidden="true">
+      <path d="M23.5 6.2s-.2-1.6-.8-2.3c-.8-.9-1.7-.9-2.1-1C17.5 2.5 12 2.5 12 2.5h0s-5.5 0-8.6.4c-.4.1-1.3.1-2.1 1-.6.7-.8 2.3-.8 2.3S0 8 0 9.8v1.7c0 1.8.2 3.6.2 3.6s.2 1.6.8 2.3c.8.9 1.9.9 2.4 1 1.7.2 7.2.4 8.6.4s5.5 0 8.6-.4c.4-.1 1.3-.1 2.1-1 .6-.7.8-2.3.8-2.3s.2-1.8.2-3.6V9.8c0-1.8-.2-3.6-.2-3.6zM9.5 14.6V7.9l6.3 3.4-6.3 3.3z"/>
+    </svg>
+  </a>
+</div>
+
 
 
     </div>
@@ -497,7 +584,7 @@ footer { text-align:center; padding:15px; background:#111; font-size:0.9rem; }
   <h2>MERCH</h2>
   <div class="grid">
     <div class="grid-item"><a href="https://sanhedrin.bigcartel.com/product/king-shirt" target="_blank" data-ga-label="merch_shirt"><img src="https://f4.bcbits.com/img/0040861302_10.jpg" alt="King Shirt"><p>King Shirt<br>(Black, Grey, Navy)</p></a></div>
-    <div class="grid-item"><a href="https://sanhedrin.bigcartel.com/product/white-shirt-2021" target="_blank" data-ga-label="merch_whiteshirt"><img src="https://f4.bcbits.com/img/0026752760_10.jpg" alt="White Reaper Shirt"><p>White Reaper Shirt<br>(Small & 2XL only)</p></a></div>
+    <div class="grid-item"><a href="https://sanhedrin.bigcartel.com/product/white-shirt-2021" target="_blank" data-ga-label="merch_whiteshirt"><img src="https://f4.bcbits.com/img/0026752760_10.jpg" alt="White Reaper Shirt"><p>White Reaper Shirt<br>(Small only)</p></a></div>
     <div class="grid-item"><a href="https://sanhedrin.bigcartel.com/product/beanie-hat" target="_blank" data-ga-label="merch_beanie"><img src="https://f4.bcbits.com/img/0039057873_10.jpg" alt="Logo Beanie"><p>Logo Beanie</p></a></div>
   </div>
 </section>
