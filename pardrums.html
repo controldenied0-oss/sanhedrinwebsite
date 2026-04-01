@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>par mahn | session drummer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Cormorant+Garamond:wght@500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0a0a0a;
+      --panel: #121212;
+      --panel-soft: #171717;
+      --text: #e9e6e1;
+      --muted: #a8a19a;
+      --line: rgba(255,255,255,0.10);
+      --accent: #cfc7bc;
+      --max: 1120px;
+    }
+
+    * {
+      box-sizing: border-box;
+      min-width: 0;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Inter', sans-serif;
+      line-height: 1.5;
+      overflow-x: hidden;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .wrap {
+      width: min(100% - 24px, var(--max));
+      margin: 0 auto;
+    }
+
+    .topbar {
+      padding: 14px 0;
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      backdrop-filter: blur(10px);
+      background: rgba(10,10,10,0.74);
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+
+    .topbar-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    .brand {
+      color: var(--text);
+      letter-spacing: 0.08em;
+      text-transform: lowercase;
+      white-space: nowrap;
+    }
+
+    .nav {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
+    .nav a:hover,
+    .contact-links a:hover,
+    .inline-links a:hover {
+      color: var(--text);
+    }
+
+    .hero {
+      padding: 18px 0 18px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+      gap: 18px;
+      align-items: stretch;
+    }
+
+    .hero-copy-wrap {
+      display: flex;
+      flex-direction: column;
+      justify-content: end;
+      padding: 4px 0;
+    }
+
+    .eyebrow {
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: var(--muted);
+      margin-bottom: 8px;
+    }
+
+    h1 {
+      margin: 0 0 8px;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2.2rem, 5vw, 4rem);
+      line-height: 0.95;
+      font-weight: 600;
+      letter-spacing: 0.01em;
+    }
+
+    .hero-sub {
+      margin: 0 0 12px;
+      color: var(--accent);
+      font-size: 15px;
+    }
+
+    .hero-copy {
+      max-width: 31rem;
+      color: var(--muted);
+      font-size: 14px;
+      margin: 0;
+    }
+
+    .inline-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin-top: 16px;
+      font-size: 14px;
+      color: var(--muted);
+    }
+
+    .hero-image {
+      aspect-ratio: 16 / 11;
+      border-radius: 2px;
+      overflow: hidden;
+      background: var(--panel);
+      min-height: 360px;
+    }
+
+    section {
+      padding: 14px 0 22px;
+    }
+
+    .section-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      gap: 16px;
+      margin-bottom: 12px;
+    }
+
+    h2 {
+      margin: 0;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.8rem;
+      font-weight: 600;
+    }
+
+    .small-note {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .services {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 12px;
+    }
+
+    .card {
+      padding: 14px 14px 15px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.015));
+      border: 1px solid var(--line);
+      min-height: 98px;
+    }
+
+    .card-title {
+      margin: 0 0 7px;
+      font-size: 14px;
+      color: var(--text);
+    }
+
+    .card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .video-block {
+      border: 1px solid var(--line);
+      background: linear-gradient(rgba(6,6,6,0.22), rgba(6,6,6,0.58)), url('DSC_9792-2.jpg') center 24% / cover;
+      min-height: 360px;
+      display: grid;
+      place-items: end start;
+      padding: 20px;
+    }
+
+    .video-placeholder {
+      max-width: 330px;
+      background: rgba(10,10,10,0.72);
+      border: 1px solid rgba(255,255,255,0.10);
+      padding: 15px 16px;
+    }
+
+    .video-placeholder strong {
+      display: block;
+      font-weight: 500;
+      margin-bottom: 6px;
+    }
+
+    .video-placeholder span {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 14px;
+      align-items: stretch;
+    }
+
+    .shot {
+      overflow: hidden;
+      background: var(--panel-soft);
+      border: 1px solid rgba(255,255,255,0.04);
+      min-height: 220px;
+    }
+
+    .shot.tall { min-height: 454px; }
+    .shot.wide { grid-column: span 2; min-height: 220px; }
+
+    .contact {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 16px;
+      align-items: start;
+      padding: 20px 0 18px;
+      border-top: 1px solid rgba(255,255,255,0.07);
+      margin-top: 6px;
+    }
+
+    .contact p {
+      margin: 8px 0 0;
+      color: var(--muted);
+      font-size: 14px;
+      max-width: 38rem;
+    }
+
+    .contact-links {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      font-size: 14px;
+      color: var(--muted);
+      justify-content: flex-end;
+      text-align: right;
+    }
+
+    .casual {
+      display: grid;
+      grid-template-columns: 240px minmax(0, 1fr);
+      gap: 16px;
+      align-items: center;
+      margin: 10px 0 8px;
+    }
+
+    .casual-image {
+      height: 260px;
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,0.06);
+      background: var(--panel);
+    }
+
+    .casual-copy {
+      color: var(--muted);
+      font-size: 14px;
+      max-width: 460px;
+    }
+
+    .footer-note {
+      color: #7f7a73;
+      font-size: 12px;
+      padding-bottom: 26px;
+    }
+
+    @media (max-width: 920px) {
+      .hero-grid,
+      .contact,
+      .casual {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-image { min-height: 260px; }
+
+      .contact-links {
+        justify-content: flex-start;
+        text-align: left;
+      }
+
+      .shot,
+      .shot.tall,
+      .shot.wide {
+        min-height: 240px;
+        grid-column: auto;
+      }
+
+      .casual-image { height: 360px; }
+    }
+
+    @media (max-width: 640px) {
+      .wrap { width: min(100% - 20px, var(--max)); }
+
+      .topbar-inner {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .nav {
+        gap: 12px;
+        justify-content: flex-start;
+      }
+
+      .hero { padding-top: 16px; }
+
+      .hero-sub,
+      .hero-copy,
+      .inline-links,
+      .card p,
+      .contact p,
+      .casual-copy { font-size: 13px; }
+
+      .video-block {
+        min-height: 280px;
+        padding: 14px;
+      }
+
+      .video-placeholder { max-width: 100%; }
+
+      .casual-image { height: 300px; }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="wrap topbar-inner">
+      <div class="brand">par mahn</div>
+      <nav class="nav">
+        <a href="#about">about</a>
+        <a href="#showreel">showreel</a>
+        <a href="#photos">photos</a>
+        <a href="#contact">contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero wrap" id="about">
+      <div class="hero-grid">
+        <div class="hero-copy-wrap">
+          <div class="eyebrow">session drummer</div>
+          <h1>live and studio drums</h1>
+          <p class="hero-sub">fills, one-off shows, tracking and whatever else needs doing</p>
+          <p class="hero-copy">
+            I play drums for live sets and studio work. I’ve mostly played metal, rock and indie. If needed, I can also provide my own drum kit.
+          </p>
+          <div class="inline-links">
+            <a href="mailto:controldenied0@yahoo.com">controldenied0@yahoo.com</a>
+            <a href="https://instagram.com/p.man9000" target="_blank" rel="noopener">@p.man9000</a>
+          </div>
+        </div>
+        <div class="hero-image">
+          <img src="https://ik.imagekit.io/sanhedrinuk/pardrums/wortburnley.JPG" alt="Par Mahn playing drums live" />
+        </div>
+      </div>
+    </section>
+
+    <section class="wrap">
+      <div class="services">
+        <div class="card">
+          <div class="card-title">live</div>
+          <p>one-offs, short runs, late fill-ins, support slots</p>
+        </div>
+        <div class="card">
+          <div class="card-title">studio</div>
+          <p>drums for demos, singles, records and rough ideas</p>
+        </div>
+        <div class="card">
+          <div class="card-title">genres</div>
+          <p>mostly metal, rock and indie, but not limited to that</p>
+        </div>
+        <div class="card">
+          <div class="card-title">kit available</div>
+          <p>my own drum kit can be used where needed</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="wrap" id="showreel">
+      <div class="section-head">
+        <h2>showreel</h2>
+        <div class="small-note">drop your video here when it’s ready</div>
+      </div>
+      <div class="video-block">
+        <div class="video-placeholder">
+          <strong>video slot</strong>
+          <span>Replace this block with your showreel embed or linked thumbnail.</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="wrap" id="photos">
+      <div class="section-head">
+        <h2>photos</h2>
+        <div class="small-note">a few live shots</div>
+      </div>
+      <div class="gallery">
+        <div class="shot tall"><img src="https://ik.imagekit.io/sanhedrinuk/pardrums/skabs.JPG" alt="Par Mahn playing drums with mouth open" /></div>
+        <div class="shot"><img src="https://ik.imagekit.io/sanhedrinuk/pardrums/emily.jpg" alt="Par Mahn playing drums with singer centre stage" /></div>
+        <div class="shot"><img src="https://ik.imagekit.io/sanhedrinuk/pardrums/tyrannos.jpg" alt="Par Mahn playing drums live" /></div>
+        <div class="shot wide"><img src="https://ik.imagekit.io/sanhedrinuk/pardrums/alphaw1.jpg" alt="Par Mahn playing live with a non-metal band in a wider stage shot" /></div>
+      </div>
+    </section>
+
+    <section class="wrap" id="contact">
+      <div class="contact">
+        <div>
+          <h2>get in touch</h2>
+          <p>
+            If you need drums for a live date or studio session, send over the details and I’ll get back to you.
+          </p>
+        </div>
+        <div class="contact-links">
+          <a href="mailto:controldenied0@yahoo.com">controldenied0@yahoo.com</a>
+          <a href="https://instagram.com/p.man9000" target="_blank" rel="noopener">instagram / p.man9000</a>
+        </div>
+      </div>
+
+      <div class="casual">
+        <div class="casual-image">
+          <img src="https://ik.imagekit.io/sanhedrinuk/pardrums/dog2.png" alt="Par Mahn with dog" style="object-position:center 10%;" />
+        </div>
+        <div class="casual-copy">
+          Outside of shows and recording I’m pretty easygoing. If you’ve got something coming up and need a drummer, just reach out.
+        </div>
+      </div>
+
+      <div class="footer-note">par mahn · session drummer</div>
+    </section>
+  </main>
+</body>
+</html>
